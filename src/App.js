@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Comments from './Comments' 
+import NewComment from './NewComment'
 
 class App extends Component {
-  //Definir meu estado interno
+
   state = {
-    newComment: '',
     comments: []
   }
 
-  handleChange = event => {
-      this.setState({
-        newComment: event.target.value
-      })
-  }
-
-  sendComment = () =>{
+  sendComment = comment =>{
     this.setState({
-      comments: [...this.state.comments, this.state.newComment],
-      newComment: ''
+      comments: [...this.state.comments, comment]
     })
   }
 
@@ -25,19 +19,8 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <div>
-            {/* New Comment */}
-            <textarea value={this.state.newComment} onChange={this.handleChange}></textarea>
-            <button onClick={this.sendComment}>Send</button>
-            {JSON.stringify(this.state)}
-          </div>
-          {/** Comments */}
-          <div>
-            {/* Comment */}
-            {this.state.comments.map(comment =>{
-              return <div>{comment}</div>
-            })}
-          </div>
+          <NewComment sendComment={this.sendComment}/>
+          <Comments comments={this.state.comments}/>
         </div>
       </div>
     );
