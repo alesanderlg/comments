@@ -1,6 +1,8 @@
 # Comments
 
-Project for React Dev course. The goal is to implement a project from scratch which contains a list of comments from the user using React.
+Project for DevPleno React course. The goal is to implement a project from scratch which contains a list of comments from the user using React.
+
+[DevPleno React course](https://www.devpleno.com/devreactjs/)
 
 Remember that a good React design practice is to create new JS files for each component.
 
